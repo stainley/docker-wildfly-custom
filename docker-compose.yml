@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+  docker-wildfly:    
+    container_name: wildfly_server    
+    build:
+      context: .
+      dockerfile: Wildfly.Dockerfile
+    ports:
+      - "8080:8080"
+      - "9990:9990"
+    environment:
+      MYSQL_HOST: "127.0.0.1:3306"
+      MYSQL_USERNAME: "admin"
+      MYSQL_PASSWORD: "Admin#1234"
